@@ -396,26 +396,28 @@ Provide a short (< 100 words), high-level description of the data
 -->
 <p>This work contains two data sets.</p>
 <ol style="list-style-type: decimal">
-<li>COMPAS recidivism data set, originally collected for the ProPublica
-story “Machine Bias”.</li>
+<li><strong>COMPAS recidivism data set:</strong></li>
 </ol>
 <ul>
-<li>Data set containing criminal history, jail and prison time,
-demographics, and COMPAS risk scores for defendants from Broward
-County.</li>
+<li>Originally collected for the ProPublica story “Machine Bias”.</li>
+<li>The features contained in this data set are criminal history, jail
+and prison time, demographics, and a COMPAS risk scores for defendants
+from Broward County.</li>
 <li>Goal is to predict whether a given defendant will recidivate, given
 the current features at hand.<br />
 </li>
 <li>The original data set can be downloaded from ProPublica’s github. <a href="https://github.com/propublica/compas-analysis/tree/master" class="uri">https://github.com/propublica/compas-analysis/tree/master</a></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Adult census income data set, from 1994.</li>
+<li><strong>Adult census income data set:</strong></li>
 </ol>
 <ul>
+<li>This data set was collected from the 1994 US Census.</li>
 <li>Data set containing demographic information such as age, education,
 marital status, occupation, etc… for individuals in the US from
 1994.</li>
-<li>Goal is to predict whethera given person makes over 50K a year.</li>
+<li>Goal is to predict whether a given person makes over 50K a
+year.</li>
 <li>The original data set can be downloaded from the UCI machine
 learning repository. <a href="https://archive.ics.uci.edu/dataset/2/adult" class="uri">https://archive.ics.uci.edu/dataset/2/adult</a></li>
 </ul>
@@ -437,7 +439,7 @@ data</em> section, below.</p>
 <li><p><input type="checkbox" checked></input>Data are available online
 at:</p>
 <ul>
-<li>The COMPAS recdivism data set can be downloaded at <a href="https://github.com/propublica/compas-analysis/tree/master" class="uri">https://github.com/propublica/compas-analysis/tree/master</a>.</li>
+<li>The COMPAS recidivism data set can be downloaded at <a href="https://github.com/propublica/compas-analysis/tree/master" class="uri">https://github.com/propublica/compas-analysis/tree/master</a>.</li>
 <li>The Adult census income data set can be downloaded at <a href="https://archive.ics.uci.edu/dataset/2/adult" class="uri">https://archive.ics.uci.edu/dataset/2/adult</a>.</li>
 </ul></li>
 <li><p><input type="checkbox"></input>Data are available as part of the
@@ -469,9 +471,9 @@ Please discuss the lack of publicly available data. For example:
 Check all that apply
 -->
 <ul class="task-list">
-<li><input type="checkbox"></input>CSV or other plain text.</li>
+<li><input type="checkbox" checked></input>CSV or other plain text.</li>
 <li><input type="checkbox"></input>Software-specific binary format (.Rda,
-Python pickle, etc.): pkcle</li>
+Python pickle, etc.):</li>
 <li><input type="checkbox"></input>Standardized binary format (e.g., netCDF,
 HDF5, etc.):</li>
 <li><input type="checkbox"></input>Other (please specify):</li>
@@ -483,11 +485,16 @@ HDF5, etc.):</li>
 A data dictionary provides information that allows users to understand the meaning, format, and use of the data.
 -->
 <ul class="task-list">
-<li><input type="checkbox"></input>Provided by authors in the following
-file(s):</li>
-<li><input type="checkbox"></input>Data file(s) is(are) self-describing (e.g.,
-netCDF files)</li>
-<li><input type="checkbox"></input>Available at the following URL:</li>
+<li><p><input type="checkbox"></input>Provided by authors in the following
+file(s):</p></li>
+<li><p><input type="checkbox"></input>Data file(s) is(are) self-describing
+(e.g., netCDF files)</p></li>
+<li><p><input type="checkbox" checked></input>Available at the following
+URL:</p>
+<ul>
+<li>COMPAS recidivism data dictionary: <a href="https://github.com/propublica/compas-analysis/tree/master" class="uri">https://github.com/propublica/compas-analysis/tree/master</a></li>
+<li>Adult census income data dictionary: <a href="https://archive.ics.uci.edu/dataset/2/adult" class="uri">https://archive.ics.uci.edu/dataset/2/adult</a></li>
+</ul></li>
 </ul>
 </div>
 <div id="additional-information-optional" class="section level3">
@@ -505,6 +512,19 @@ OPTIONAL: Provide any additional details that would be helpful in understanding 
 <!--
 Provide a short (< 100 words), high-level description of the code. If necessary, more details can be provided in files that accompany the code. If no code is provided, please state this and say why (e.g., if the paper contains no computational work).
 -->
+<p>Each figure in the paper is accompanied by its own folder containing
+a function file and a main file. The function file must be executed
+before running the main file. The main file produces numerical results
+and generates an accompanying plot. The function file for every figure
+are nearly identical, with minor modifications implemented to expedite
+computation in more complex tasks. Although parallel processing is
+utilized in some files, it is optional; these files can be run without
+parallel processing by replacing <strong>‘mclapply’</strong> with
+<strong>‘lapply’</strong>.</p>
+<p>An accompanying R package named <strong>fasi</strong> is available on
+CRAN, which can be used to implement our algorithm on new data sets.
+However, please note that this R package was not directly used in the
+studies presented in the main paper.</p>
 </div>
 <div id="description-1" class="section level2">
 <h2>Description</h2>
@@ -514,16 +534,16 @@ Provide a short (< 100 words), high-level description of the code. If necessary,
 Check all that apply
 -->
 <ul class="task-list">
-<li><input type="checkbox"></input>Script files
+<li><input type="checkbox" checked></input>Script files
 <ul class="task-list">
-<li><input type="checkbox"></input>R</li>
+<li><input type="checkbox" checked></input>R</li>
 <li><input type="checkbox"></input>Python</li>
 <li><input type="checkbox"></input>Matlab</li>
 <li><input type="checkbox"></input>Other:</li>
 </ul></li>
-<li><input type="checkbox"></input>Package
+<li><input type="checkbox" checked></input>Package
 <ul class="task-list">
-<li><input type="checkbox"></input>R</li>
+<li><input type="checkbox" checked></input>R</li>
 <li><input type="checkbox"></input>Python</li>
 <li><input type="checkbox"></input>MATLAB toolbox</li>
 <li><input type="checkbox"></input>Other:</li>
@@ -546,14 +566,39 @@ Please cite all software packages in the References Section in similar fashion t
 <div id="version-of-primary-software-used" class="section level4">
 <h4>Version of primary software used</h4>
 <!--
-(e.g., R version 3.6.0)
+(e.g., R version 4.3.1)
 -->
+<p>R version 4.3.1</p>
 </div>
 <div id="libraries-and-dependencies-used-by-the-code" class="section level4">
 <h4>Libraries and dependencies used by the code</h4>
 <!--
 Include version numbers (e.g., version numbers for any R or Python packages used)
 -->
+<p>There are no packages that are foundational to the implementation of
+the FASI algorithm. However, since users can estimate confidence scores
+from any machine learning model, we demonstrated our algorithm using
+various algorithms. The ones used in our report are,</p>
+<p><strong>ML algorithms for estimating confidence scores</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>GAM</strong> - from the <strong>‘gam’</strong> package on
+CRAN, version <em>‘1.22.3’</em>.</p></li>
+<li><p><strong>Logistic Regression</strong> - from the
+<strong>‘MASS’</strong> package on CRAN, version
+<em>‘7.3.60’</em>.</p></li>
+<li><p><strong>Nonparametric Naive Bayes</strong> - from the
+<strong>‘naivebayes’</strong> package on CRAN, version
+<em>‘1.0.0’</em>.</p></li>
+<li><p><strong>XGBoost</strong> - from the <strong>‘xgboost’</strong>
+package on CRAN, version <em>‘1.7.5.1’</em>.</p></li>
+</ol>
+<p><strong>Packages for general simulation workflow</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>tidyverse</strong> - version <em>‘2.0.0’,</em> available
+on CRAN.</p></li>
+<li><p><strong>ggplot2</strong> - version <em>‘3.4.4’,</em> available on
+CRAN.</p></li>
+</ol>
 </div>
 </div>
 <div id="supporting-systemhardware-requirements-optional" class="section level3">
@@ -566,10 +611,10 @@ OPTIONAL: System/hardware requirements including operating system with version n
 <h3>Parallelization used</h3>
 <ul class="task-list">
 <li><input type="checkbox"></input>No parallel code used</li>
-<li><input type="checkbox"></input>Multi-core parallelization on a single
-machine/node
+<li><input type="checkbox" checked></input>Multi-core parallelization on a
+single machine/node
 <ul>
-<li>Number of cores used:</li>
+<li>Number of cores used: 10</li>
 </ul></li>
 <li><input type="checkbox"></input>Multi-machine/multi-node parallelization
 <ul>
@@ -580,7 +625,7 @@ machine/node
 <div id="license" class="section level3">
 <h3>License</h3>
 <ul class="task-list">
-<li><input type="checkbox"></input>MIT License (default)</li>
+<li><input type="checkbox" checked></input>MIT License (default)</li>
 <li><input type="checkbox"></input>BSD</li>
 <li><input type="checkbox"></input>GPL v3.0</li>
 <li><input type="checkbox"></input>Creative Commons</li>
@@ -606,9 +651,11 @@ The materials provided should provide a straightforward way for reviewers and re
 <ul class="task-list">
 <li><input type="checkbox"></input>Any numbers provided in text in the
 paper</li>
-<li><input type="checkbox"></input>The computational method(s) presented in
-the paper (i.e., code is provided that implements the method(s))</li>
-<li><input type="checkbox"></input>All tables and figures in the paper</li>
+<li><input type="checkbox" checked></input>The computational method(s)
+presented in the paper (i.e., code is provided that implements the
+method(s))</li>
+<li><input type="checkbox" checked></input>All tables and figures in the
+paper</li>
 <li><input type="checkbox"></input>Selected tables and figures in the paper,
 as explained and justified below:</li>
 </ul>
@@ -624,7 +671,7 @@ Check all that apply, and in the case of a Git repository include unique identif
 <ul class="task-list">
 <li><input type="checkbox"></input>As part of the paper’s supplementary
 material.</li>
-<li><input type="checkbox"></input>In this Git repository:</li>
+<li><input type="checkbox" checked></input>In this Git repository: <a href="https://github.com/bradleyrava/fasi_experiments" class="uri">https://github.com/bradleyrava/fasi_experiments</a></li>
 <li><input type="checkbox"></input>Other (please specify):</li>
 </ul>
 <!--
@@ -662,7 +709,7 @@ desktop machine:</p>
 <li><input type="checkbox"></input>&lt; 1 minute</li>
 <li><input type="checkbox"></input>1-10 minutes</li>
 <li><input type="checkbox"></input>10-60 minutes</li>
-<li><input type="checkbox"></input>1-8 hours</li>
+<li><input type="checkbox" checked></input>1-8 hours</li>
 <li><input type="checkbox"></input>&gt; 8 hours</li>
 <li><input type="checkbox"></input>Not feasible to run on a desktop machine,
 as described here:</li>
