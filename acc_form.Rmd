@@ -1,4 +1,12 @@
+---
+title: Author Contribution Ckecklist Form for ``A Burden Shared is a Burden \text{Halved:} A Fairness Adjusted Approach to Classification"
+
+output:
+  pdf_document: default
+  html_document: default
+---
 <!--HOW TO COMPLETE THIS FORM:-->
+
 
 ```{=html}
 <!--
@@ -19,6 +27,7 @@ Note that older versions of RStudio (versions lower than 1.3) may not create a f
 4. If you are comfortable with Markdown syntax, you may choose to include any Markdown-compliant formatting in the form. For example, you may wish to include R code chunks and compile this document in R Markdown.
 -->
 ```
+
 This form documents the artifacts associated with the article (i.e., the data and code supporting the computational findings) and describes how to reproduce the findings.
 
 # Part 1: Data
@@ -54,7 +63,7 @@ This work contains two data sets.
 
 -   This data set was collected from the 1994 US Census.
 -   Data set containing demographic information such as age, education, marital status, occupation, etc... for individuals in the US from 1994.
--   Goal is to predict whether a given person makes over 50K a year.
+-   Goal is to predict whether a given person makes above (class 2) or below (class 1) 50K a year.
 -   The original data set can be downloaded from the UCI machine learning repository. <https://archive.ics.uci.edu/dataset/2/adult>
 
 ## Availability
@@ -194,13 +203,15 @@ There are no packages that are foundational to the implementation of the FASI al
 
 **ML algorithms for estimating confidence scores**
 
-1.  **GAM** - from the **'gam'** package on CRAN, version *'1.22.3'*.
+1.  **GAM** - from the **'mgcv'** package on CRAN, version *'1.9.1'*.
 
-2.  **Logistic Regression** - from the **'MASS'** package on CRAN, version *'7.3.60'*.
+2.  **adaboost** - from the **'JOUSBoost'** package on CRAN, version *'2.1.0'*.
 
-3.  **Nonparametric Naive Bayes** - from the **'naivebayes'** package on CRAN, version *'1.0.0'*.
+3.  **Logistic Regression** - from the **'MASS'** package on CRAN, version *'7.3.60'*.
 
-4.  **XGBoost** - from the **'xgboost'** package on CRAN, version *'1.7.5.1'*.
+4.  **Nonparametric Naive Bayes** - from the **'naivebayes'** package on CRAN, version *'1.0.0'*.
+
+5.  **XGBoost** - from the **'xgboost'** package on CRAN, version *'1.7.5.1'*.
 
 **Packages for general simulation workflow**
 
@@ -281,7 +292,7 @@ Indicate where the materials (generally including the code, unless in a separate
 Check all that apply
 -->
 ```
--   [ ] Single master code file
+-   [x] Single master code file
 -   [ ] Wrapper (shell) script(s)
 -   [ ] Self-contained R Markdown file, Jupyter notebook, or other literate programming approach
 -   [ ] Text file (e.g., a readme-style file) that documents workflow

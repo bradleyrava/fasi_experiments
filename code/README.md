@@ -1,5 +1,1 @@
-Please replace the contents of this file with relevant instructions for your repository or remove this file entirely.
-
-This directory would generally contain source code files that contain the core code to implement the method and various utility/auxiliary functions.
-
-Scripts/code files that execute the overall workflow to carry out an analysis and generate results for the manuscript might be placed in the main directory.
+Each folder is self contained. To reproduce any figure, navigate to the file in this directory and set the working directory of your session to that folder. Then load the "main file". This file will source a function file in the same directory, enabling you to run the main analysis. After which you can save the results of your run to the same directory. There is a separate plot file that can be run after the main analysis that will allow you to reproduce the figures in the paper, with the data obtained from your main results.
