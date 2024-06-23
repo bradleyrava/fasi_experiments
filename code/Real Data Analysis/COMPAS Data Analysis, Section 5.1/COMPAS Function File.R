@@ -233,14 +233,6 @@ fasi_fcn <- function(train_data, test_data, naive_indicator=T) {
   dta_gam <- cbind.data.frame(y=y_train, dta_train)
 
   if (naive_indicator==T) {
-    gam_formula_mgcv <- as.formula("y ~ s(age, k=4) +
-                           s(priors_count, k=3) +
-                           s(days_b_screening_arrest, k=2) +
-                           s(decile_score, k=3) +
-                           sex +
-                           age_priors +
-                           s(days_decile, k=2) +
-                           s(days_btwn_arrest, k=2)")
     gam_formula_mgcv <- as.formula("y ~ s(age, k=2.557) +
                            s(priors_count, k=3.739) +
                            s(days_b_screening_arrest, k=1.000) +
@@ -250,16 +242,6 @@ fasi_fcn <- function(train_data, test_data, naive_indicator=T) {
                            s(days_decile, k=2.204) +
                            s(days_btwn_arrest, k=3.364)")
   } else {
-    gam_formula_mgcv <- as.formula("y ~ s(age, k=4) +
-                           s(priors_count, k=3) +
-                           s(days_b_screening_arrest, k=2) +
-                           s(decile_score, k=3) +
-                           sex +
-                           race_factor +
-                           age_priors +
-                           s(days_decile, k=2) +
-                           sex_race +
-                           s(days_btwn_arrest, k=2)")
     gam_formula_mgcv <- as.formula("y ~ s(age, k=2.557) +
                            s(priors_count, k=3.739) +
                            s(days_b_screening_arrest, k=1.000) +
